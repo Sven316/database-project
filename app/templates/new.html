@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Create a City{% endblock %}
+{% block body %}
+
+<div class="container">
+  <h1>How do you evaluate your cities?</h1>
+  <h3>Add a city!</h3>
+  <br>
+  <div class="col-6">
+    <form action="{{ url_for('createCity') }}" method="POST" accept-charset="utf-8">
+      <div class="form-group">
+        <label for="city_name">City</label>
+        <input type="text" class="form-control" id="city_name" name="city_name" placeholder="Boston" required>
+      </div>
+      <div class="form-group">
+        <label for="cost_of_living_index">Cost of Living</label>
+        <input type="number" step = "0.01" class="form-control" id="cost_of_living_index" name="cost_of_living_index" required>
+      </div>
+      <div class="form-group">
+        <label for="rent_index">Rent</label>
+        <input type="number" step = "0.01" class="form-control" id="rent_index" name="rent_index" required>
+      </div>
+      <div class="form-group">
+        <label for="general_cost_index">General Cost</label>
+        <input type="number" step = "0.01" class="form-control" id="general_cost_index" name="general_cost_index" required>
+      </div>
+      <div class="form-group">
+        <label for="groceries_index">Groceries</label>
+        <input type="number" step = "0.01" class="form-control" id="groceries_index" name="groceries_index" required>
+      </div>
+      <div class="form-group">
+        <label for="restaurant_price_index">Restaurant Price</label>
+        <input type="number" step = "0.01" class="form-control" id="restaurant_price_index" name="restaurant_price_index" required>
+      </div>
+      <div class="form-group">
+        <label for="local_purchasing_power_index">Local Purchasing Power</label>
+        <input type="number" step = "0.01" class="form-control" id="local_purchasing_power_index" name="local_purchasing_power_index" required>
+      </div>
+      <div class="form-group">
+        <label for="country_name">Country</label>
+        <select name="country_name" class="form-control" id="country_name">
+          <option selected="true" disabled="disabled">Select One</option>
+          {% for country in countries %}
+          <option>{{ country }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="topography_id">Topography Id</label>
+        <select name="topography_id" class="form-control" id="topography_id">
+          <option selected="true" disabled="disabled">Select One</option>
+          {% for topography in topographys %}
+          <option>{{ topography }}</option>
+          {% endfor %}
+        </select>       
+      </div>
+      <div class="form-group">
+        <label for="climate_type">Climate Type</label>
+        <select name="climate_type" class="form-control" id="climate_type">
+          <option selected="true" disabled="disabled">Select One</option>
+          {% for climate in climates %}
+          <option>{{ climate }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <br>
+      <br>
+      <button type="submit" id="createCity" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+.container {
+  padding: 50px 10px;
+}
+
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#filter {
+  width: 300px;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.nav-id {
+  float: right;
+  color: #fff;
+  white-space: nowrap;
+  display: none;
+}
+
+.nav-id a {
+  color: #fff;
+}
+
+.yourreviews {
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+.badge-primary {
+  font-size: 60%;
+  font-weight: 300;
+  vertical-align: middle;
+}
+
+thead {
+  background-color: #bbb;
+}
+
+.modal-header {
+  border: none;
+  padding: 20px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal.show .modal-dialog {
+  max-width: 530px;
+}
+
+.buttons {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.table thead th {
+  white-space: nowrap;
+}
+
+.fa {
+  font-size: 1.5rem;
+}
+
+.table a {
+  display: block;
+}
+
+.delete {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #d9534f;
+}
+
+.delete:hover {
+  color: #c9302c;
+}

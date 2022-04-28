@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<div class="container">
+  <h1>City Living Quality Evaluation System</h1>
+  <p class="lead">Welcome to our project homepage! You can use this web app to look up information about the city's living index.</p>
+  <br>
+
+  <h5>Filter through the cities using the dropdowns below.</h5>
+
+  <form action="{{ url_for('filter') }}" method="POST" accept-charset="utf-8">
+
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="continent">Continent:</label>
+        <select name="continent" class="form-control" id="continent">
+          <option>All Continents</option>
+          {% for continent in continents %}
+          <option>{{ continent }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-3">
+        <label for="country">Country:</label>
+        <select name="country" class="form-control" id="country">
+          <option>All Countries</option>
+          {% for country in countries %}
+          <option>{{ country }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-3">
+        <label for="climate">Climate:</label>
+        <select name="climate" class="form-control" id="climate">
+          <option>All Climates</option>
+          {% for climate in climates %}
+          <option>{{ climate }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-3">
+        <label for="topography">Topography:</label>
+        <select name="topography" class="form-control" id="topography">
+          <option>All Topographies</option>
+          {% for topography in topographys %}
+          <option>{{ topography }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button type="submit" id="filter" class="btn btn-primary btn-lg btn-block">Filter</button>
+
+  </form>
+</div>
+{% endblock %}

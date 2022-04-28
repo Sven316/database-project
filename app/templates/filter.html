@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Filtered Results{% endblock %}
+{% block body %}
+
+<div class="container">
+  <h1>City Living Quality Evaluation System</h1>
+  <p class="lead">Welcome to our homepage!</p>
+  <br>
+
+  <div class="results">
+    <h3>Filter cities By: &nbsp;&nbsp;&nbsp;
+      {% for item in filterItems %}
+      <span class="badge badge-primary">{{ item }}</span>
+      {% endfor %}
+    </h3>
+    <br>
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>City</th>
+          <th>living Cost</th>
+          <th>Rent</th>
+          <th>General Cost</th>
+          <th>Groceries</th>
+          <th>Restaurant</th>
+          <th>Purchasing Power</th>
+          <th>Country</th>
+          <th>Topography</th>
+          <th>Climate</th>
+          <th>Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in results %}
+        <tr>        
+          {% for data in row %}                 
+          <td>{{ data }}</td>
+          {% endfor %}          
+          <td>
+            <a href="/profile/{{row[0]}}">
+              <!-- <i class="fa fa-info-circle"></i> -->
+              MODIFY
+            </a>
+          </td>          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}
